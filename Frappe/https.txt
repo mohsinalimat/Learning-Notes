@@ -1,0 +1,12 @@
+openssl req -new -newkey rsa:2048 -nodes -keyout shop.mydomain.com.key -out shop.mydomain.com.csr
+
+bench config dns_multitenant on
+bench setup nginx
+sudo service nginx reload
+
+bench set-ssl-certificate {site-name} /etc/nginx/conf.d/ssl/certificate_bundle.crt
+bench set-ssl-key {site-name} /etc/nginx/conf.d/ssl/shop.mydomain.com.key
+bench setup nginx
+sudo service nginx reload
+
+openssl req -x509 -newkey rsa:4096 -sha256 -nodes -keyout key.pem -out cert.pem -days 3650

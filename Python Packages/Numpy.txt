@@ -1,0 +1,123 @@
+***Numpy***
+
+1.ndarray
+ list and tuple
+ dimensions(nested array)
+
+#0-dimension array or Scalar
+->numpy.array(45)
+
+#1-dimension array or uni-dimension array
+->numpy.array([1,2,3,4,5])
+
+#2-dimension array
+->numpy.array([[1,2,3],[4,5,6]])
+
+#3-dimension array
+->numpy.array([[[1,2,3],[4,5,6],[4,5,6]]])
+
+#To find the dimension
+a=numpy.array([[[1,2,3],[4,5,6],[4,5,6]]])
+->print(a.ndim)
+
+#higher dimension
+->numpy.array([1,2,3,4,5,6],ndmin=5)
+->Results:
+[1
+ 2
+ 3 
+ 4 
+ 5
+ 6]
+[[[[[1,2,3,4,5,6]]]]]
+
+->numpy.array([1,2,3,4],ndmin=5)
+->Results:
+[1
+ 2
+ 3 
+ 4 ]
+[[[[[1,2,3,4]]]]]
+
+#Numpy Datatypes
+1.i-integer
+2.b-boolean
+3.u-unsigned integer
+4.U-unicode string
+5.f-float
+6.c-complex float
+7.m-timedelta
+8.o-object
+9.M-datetime
+10.s-string
+11.V-null(void)
+
+#astype->to convert another datatype
+example
+->x=numpy.array([1.2,3.5,4.5,5.5])
+->new_x=x.astype("i")
+->(new_x)
+
+#copy->It is used for extra copy
+#view->it is used for Recheck the data
+
+#shape->to find the shape
+#Reshape->change the dimentions and elements
+
+Reshape type:
+#Flattening->To convert one dimentional array(without affect origional array)
+
+#ravel()->To convert one dimentional array(with affect original array)
+
+#concatenate
+axis=1 kodutha row wise concatenate akum 
+axis=0  kodukalana column wise concatenate akum
+axis kodutha flatten akum
+
+#stack()
+#vstack() To join vertically
+#hstack() To join horizontally
+#dstack() Elements are joined index by index
+#column_Stack()
+
+#nditer()
+#ndenumerate()
+
+#join
+#split() ->to split the data
+
+#where() ->it is used for searching arrays
+#searchsorted() ->it is used for searching arrays
+
+#sort()
+#filter()
+
+-------------------------------------------------------------------------------
+**Numpy Maths***
+
+*Numpy Random Numbers 
+#rand ->0 to 1 (float)
+#randint -> 0 to infinity
+#choice ->
+#random.normal
+
+*Data distribution
+#Probability -> 0.0 to 0.9 erukanum & total 1 than varanum
+
+*Numpy Permutation
+#shuffle
+#Permutation
+
+**seaborn
+#distplot()
+
+#binomial distribution
+#multibinomial distribution
+#Exponential distribution
+#poisson distribution
+
+**ufuncs
+#arithmetic
+#rounding decimal (trunc(),fix(),around(),floor,ceil())
+
+

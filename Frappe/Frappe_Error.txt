@@ -1,0 +1,316 @@
+Error:
+
+Building wheels for collected packages: Pillow Running setup.py bdist_wheel for Pillow ... error
+
+Solution :
+
+
+apt-get install libjpeg-dev zlib1g-dev
+
+and then
+
+pip3 install Pillow
+
+also try updating setuptools:
+
+sudo pip install -U setuptools
+
+
+
+
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('MyNewPass');
+UPDATE mysql.user SET plugin = '' WHERE user = 'root' AND host = 'localhost';
+FLUSH PRIVILEGES;
+ or 
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyN3wP4ssw0rd';
+flush privileges;
+exit;
+
+
+Error:
+
+ File "/usr/lib/cnf-update-db", line 8, in <module>
+    from CommandNotFound.db.creator import DbCreator
+  File "/usr/lib/python3/dist-packages/CommandNotFound/db/creator.py", line 11, in <module>
+    import apt_pkg
+ModuleNotFoundError: No module named 'apt_pkg'
+
+
+Solution:
+
+cd /usr/lib/python3/dist-packages/
+
+sudo ln -s apt_pkg.cpython-36m-x86_64-linux-gnu.so apt_pkg.so
+
+
+
+Error:
+
+Bench Start Problem || Spawn Error
+
+Solution:
+
+Step1:cd /app/frappe
+step2:rm -rf node_modules
+step3:bench setup requirements --node
+step4:sudo systemctl restart supervisor
+step5:sudo systemctl status supervisor
+
+Error:
+frappe-framework-redis:frappe-framework-redis-cache                 STOPPED   Mar 09 03:16 PM
+frappe-framework-redis:frappe-framework-redis-queue                 STOPPED   Mar 09 03:16 PM
+
+Solution:
+
+$ sudo -A systemctl restart supervisor
+
+
+Error:
+
+error in appstreamcli
+
+solution:
+
+apt-get remove appstream
+
+
+
+Error:
+E: Unable to locate package python3.10-venv
+E: Couldn't find any package by glob 'python3.10-venv'
+E: Couldn't find any package by regex 'python3.10-venv'
+
+solution:
+1.check your python possibilities?
+2.intall latest version
+
+error:
+
+Traceback (most recent call last):
+  File "/usr/bin/pip", line 9, in <module>
+    from pip import main
+ImportError: cannot import name main
+
+
+solution:
+
+pip3 install --upgrade pip --user
+
+
+error:
+
+ upgrade node 14 above version in ubuntu 16.04
+ 
+ note:Ubuntu 16.04's default repository only has up to Node.js version 10. To install a newer version of Node.js, you'll need to use a third-party repository or compile Node.js from source. Here are a few options:
+ 
+
+ solution:
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+source ~/.bashrc
+nvm install 14
+
+
+1.Error:
+
+Attempting uninstall: PyYAML Found existing installation: PyYAML 3.12 ERROR: Cannot uninstall 'PyYAML'. It is a distutils installed project and thus we cannot accurately determine which files belong to it which would lead to only a partial uninstall. ERROR: subprocess.CalledProcessError: Command 'sudo /usr/bin/python3 -m pip install ansible' returned non-zero exit status 1.
+
+
+Solution:
+
+pip install pmutt --ignore-installed PyYAML
+
+
+2.Error:
+
+"ERROR: Ansible requires the locale encoding to be UTF-8; Detected ISO8859-1" in ubuntu?
+
+solution:
+
+step1
+sudo nano /etc/default/locale
+
+step2
+LANG="en_US.UTF-8"
+LC_CTYPE="en_US.UTF-8"
+
+step3
+sudo update-locale LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8
+
+step4
+Finally restart your machine
+
+
+
+3.Error:
+dpkg: error processing package wkhtmltox (--install): dependency problems - leaving unconfigured Processing triggers for man-db (2.8.3-2ubuntu0.1) ... Errors were encountered while processing: wkhtmltox
+
+solution:
+
+sudo apt install xfonts-75dpi
+
+sudo dpkg -i wkhtmltox_0.12.5-1.bionic_amd64.deb
+
+sudo cp /usr/local/bin/wkhtmlto* /usr/bin/
+Once the files are in place, change their permissions to make them executable:
+
+sudo chmod a+x /usr/bin/wk*
+
+#pip list
+
+error:
+udo: no askpass program specified, try setting SUDO_ASKPASS
+
+solution:
+
+export SUDO_ASKPASS=/usr/X11R6/bin/ssh-askpass  
+
+error:
+
+ERROR: Command 'supervisorctl status' returned non-zero exit status 1.
+
+
+solution:
+sudo apt install ssh-askpass
+ssh-keyscan -t rsa bitbucket.org >> ~/.ssh/known_hosts
+
+
+Error:
+
+Failed to start apt-news.service: Unit apt-news.service is masked.
+Failed to start esm-cache.service: Unit esm-cache.service is masked.
+
+Solution:
+
+$ sudo systemctl mask apt-news.service
+$ sudo systemctl mask esm-cache.service
+
+$sudo mv /etc/apt/apt.conf.d/20apt-esm-hook.conf /etc/apt/apt.conf.d/20apt-esm-hook.conf.disabled
+
+
+
+
+Error:
+
+
+dpkg: error processing archive /var/cache/apt/archives/nodejs_14.21.3-deb-1nodesource1_amd64.deb (--unpack):  
+trying to overwrite '/usr/include/node/common.gypi', which is also in package libnode-dev 12.22.9~dfsg-1ubuntu3 dpkg-deb: 
+error: paste subprocess was killed by signal (Broken pipe) Errors were encountered while processing
+
+Solution:
+
+
+sudo apt remove libnode-dev
+sudo apt remove libnode72:amd64
+sudo apt install nodejs
+
+
+
+Error:
+
+sudo: no askpass program specified, try setting SUDO_ASKPASS
+
+
+Solution:
+
+sudo apt install ssh-askpass
+
+
+error:
+
+bind: Address already in use issue
+
+solution:
+
+1.sudo supervisorctl stop all
+2.sudo service nginx stop
+3.bench start
+
+or 
+
+1.sudo lsof -i :12000 (check)
+2.Kill the 12000 process (using kill -9 pid no)
+3.Uninstall redis-server and install redis-server
+
+
+Error:
+
+frappe.exceptions.DoesNotExistError: DocType homepage not found
+
+solution:
+
+Step1:Bench update
+
+Error:
+
+Cannot proceed with update: You have local changes in app "frappe" that are not committed
+
+Solution:
+
+step1:
+git status
+git add.
+git commit -a
+
+or 
+git stash
+
+Error:
+
+session expired 
+
+Solution:
+
+try out
+1-localhost:8090 on chrome browser
+2- localhost:8050 on firefox web browser
+on same browser it not allow to run 2 sites
+
+
+
+
+Error:
+
+Bench Start Problem || Spawn Error
+
+Solution:
+
+Step1:cd /app/frappe
+step2:rm -rf node_modules
+step3:bench setup requirements --node
+step4:sudo systemctl restart supervisor
+step5:sudo systemctl status supervisor
+
+
+How to turn off production mode ?
+We can turn off the production mode by the following commands
+
+cd frappe-framework
+rm config/supervisor.conf
+rm config/nginx.conf
+sudo service nginx stop
+sudo service supervisord stop
+bench setup procfile
+bench start
+
+
+Or 
+
+service nginx stop
+service supervisord stop
+cd frappe-bench
+bench setup procfile
+bench start
+
+
+or 
+
+frappe-bench/sites/{your site}/site_config.json
+
+bench set-config developer_mode 1
+
+bench clear-cache
+
+bench setup requirements --dev
+
+
+

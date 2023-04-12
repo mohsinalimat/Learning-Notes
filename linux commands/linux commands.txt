@@ -1,0 +1,6 @@
+linux commands:
+
+1.ls -i (show the details with node number and "i" means i-node number)
+2.locate filename (find full path of the file)
+3.cat /etc/*release (show the release version details and more details of operating process)
+

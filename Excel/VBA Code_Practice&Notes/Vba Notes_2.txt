@@ -1,0 +1,6 @@
+VBA Notes:
+
+Shortcuts:
+Ctrl+R-->To Open Project Window
+F4-->To Open Properties Window
+Ctrl+G-->To Open Immediate Window

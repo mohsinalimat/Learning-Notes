@@ -1,0 +1,71 @@
+keyboard shortcuts
+
+Copy: CTRL+C
+
+Cut: CTRL+X
+
+Paste: CTRL+V
+
+Paste Special : CTRL+ALT+V
+
+Save :  CTRL+S
+
+Open Workbook : CTRL+O
+
+Insert New Worksheet : SHIFT+F11
+
+Undo : CTRL+Z
+
+Redo : CTRL+Y
+
+Italic : CTRL+I
+
+Bold : CTRL+B
+
+Underline : CTRL+U
+
+Open Cell Formatting Menu : CTRL+1
+
+Add Outline Border : CTRL+SHIFT+7
+
+Remove Borders : CTRL+SHIFT+-
+
+Repeat Previous Format : F4
+
+Apply General Format : CTRL+SHIFT+~
+
+Apply Number Format : CTRL+SHIFT+1
+
+Apply Time Format :CTRL+SHIFT+2
+
+Apply Date Format : CTRL+SHIFT+3
+
+Apply Currency Format :CTRL+SHIFT+4
+
+Apply Percentage Format :CTRL+SHIFT+5
+
+Apply Scientific Format :CTRL+SHIFT+6
+
+Edit Cell :F2
+
+Toggle Absolute / Relative Cell References:F4
+
+Refresh / Calculate :F9
+
+Autosum:ALT++
+
+Toggle Formula View Mode : CTRL+~
+
+Insert Current Date: CTRL+;
+
+Copy Formula From Cell Above :CTRL+'
+
+Copy Value From Cell Above :CTRL+SHIFT+'
+
+Fill Down : CTRL+D
+
+Fill Right: CTRL+R
+
+Insert Named Range Into Formula :F3
+
+Open Name Manager Dialog Box :CTRL+F3

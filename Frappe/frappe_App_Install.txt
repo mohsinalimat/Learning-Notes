@@ -1,0 +1,71 @@
+Install Frappe app:Translator
+
+bench get-app https://github.com/frappe/translator --branch version-14
+
+
+bench --site test.com install-app translator
+
+
+
+
+Install Frappe App:erpnext
+
+bench get-app erpnext --branch version-14
+###OR
+bench get-app https://github.com/frappe/erpnext --branch version-14
+
+bench new-site dcode.com
+
+
+bench --site dcode.com install-app erpnext
+
+bench start
+
+
+Install Frappe App:insights
+
+
+In a separate terminal window, create a new site by running **bench new-site insights.test**
+Map your site to localhost with the command **bench --site insights.test add-to-hosts**
+Get the Insights app. Run **bench get-app https://github.com/frappe/insights**
+Run **bench --site insights.test install-app insights**.
+Now open the URL http://insights.test:8000/insights in your browser, you should see the app running
+
+Install Frappe App:frappedesk
+
+In a separate terminal window, create a new site by running bench new-site frappedesk.test
+Map your site to localhost with the command bench --site frappedesk.test add-to-hosts
+Get the Frappe Desk app. Run  bench get-app https://github.com/frappe/desk
+Run bench --site frappedesk.test install-app frappedesk.
+Now open the URL http://frappedesk.test:8000/frappedesk in your browser, you should see the app running
+
+Install Frappe App:erpnext_telegram_integration
+
+./env/bin/pip install python-telegram-bot --upgrade
+
+bench get-app erpnext_telegram_integration https://github.com/yrestom/erpnext_telegram.git
+
+bench install-app erpnext_telegram_integration
+
+bench build
+
+bench restart
+
+or 
+
+./env/bin/pip install python-telegram-bot --upgrade
+
+bench get-app erpnext_telegram_integration https://github.com/yrestom/erpnext_telegram.git
+
+bench --site [your.site.name] install-app erpnext_telegram_integration
+
+bench build
+
+bench restart
+
+
+how to set password command:(if you forget) use this command
+
+
+bench --site madhankumar.com(sitename) set-admin-password abcd(password)
+

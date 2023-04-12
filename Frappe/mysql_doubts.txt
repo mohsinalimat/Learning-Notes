@@ -1,0 +1,36 @@
+sudo service mysql status
+
+sudo service mariadb status
+
+sudo mysql -u root  -p
+
+select*from mysql.user;
+
+MariaDB [(none)]> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| _123-redacted-123  |
+| information_schema |
+| mysql              |
+| performance_schema |
++--------------------+
+4 rows in set (0.001 sec)
+
+MariaDB [(none)]> SELECT user,authentication_string,plugin,host FROM mysql.user;
++-------------------+-----------------------+--------+------------+
+| user              | authentication_string | plugin | host       |
++-------------------+-----------------------+--------+------------+
+| root              |                       |        | localhost  |
+| _38f74ec15f7433a1 |                       |        | 172.19.0.4 |
+| _38f74ec15f7433a1 |                       |        | %          |
++-------------------+-----------------------+--------+------------+
+3 rows in set (0.000 sec)
+
+
+
+To reset password:
+
+mysql> UPDATE mysql.user SET authentication_string = PASSWORD('new_password') WHERE User = 'root' AND Host = 'localhost';
+
+mysql> FLUSH PRIVILEGES;

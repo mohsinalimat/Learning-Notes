@@ -1,0 +1,165 @@
+VBA notes:
+
+Application.cutcopymode = False
+Range("A1").Orientation = 50 (which means rotate the text 50 degree)
+Range("A1").wraptext = true
+
+#Merge
+Range("A1:A4").cells.merge
+Range("A1:A4").cells.mergecells = true
+Range("A1:A4").unmerge
+
+#Clear
+Range("A1").ClearHyperlinks -(clear only hyperlinks)
+Range("A1").ClearFormats-(clear only formats)
+Range("A1").Clear-(clear all)
+Range("A1").ClearComments-(clear only comments)
+Range("A1").Clearcontents-(clear only contents)
+
+#Delete
+Range("b1").Entirecolumn.Delete (next c1 column move to b1 columm (leftside shift))
+Range("a1").EntireRow.Delete (next a2 row move to a1 row (upside shift) or
+Range("a1:a8").Delete (next b1:b8 column move to a1:a8 columm (leftside shift))
+Range("b:d1").EntireColumn.delete
+
+#Insert
+Range("A8").EntireColumn.Insert
+
+#width
+Range("A1").ColumnWidth = 100
+Range("A1").Columns.Autofit
+Range("A1").rows.Autofit
+
+#select or Activate
+Range("a1").select
+Range("a1:b5").select
+Range("a1").Activate
+Range("a1:b5").Activate
+
+#Add
+worksheets.add after:=worksheets("sheet17")
+worksheets.add before:=worksheets("sheet17")
+
+#name
+worksheets.add (sheet added without name)
+worksheets.add.name="custom sheet" (sheet added with name)
+worksheets(4).Name = "Rename sheet"
+
+#copysheets and movesheets
+worksheets("custom sheet").copy before:=worksheets("sheet1")
+worksheets("custom sheet").move before:=worksheets("sheet1")
+
+#select sheet or activate
+worksheets(4).select
+worksheets("sheet4").activate
+
+#save and close workbook
+workbooks.add.saveas filename:="d:\data\internet"
+workbooks("book1").save
+workbooks("book1").close
+
+#Msgbox (Thisworkbook.name)
+Range("a1").value=Thisworkbook.name
+
+#delete the workbook
+Kill ("d:\data\internet\avm.xlsx")
+
+#For loop
+Dim x as Integer
+for x =1 to ThisWorkbook.Sheets.count
+cells(x,1)=Thisworkbook.sheets(x).name
+Next
+
+#For Each Next loop
+Dim sht as Worksheet
+for Each sht in ThisWorkbook.Sheets
+MsgBox sht.Name
+Next
+
+Dim sht as Worksheet
+Dim i As Integer
+i = 1
+for Each sht in ThisWorkbook.Sheets
+cells(i,1) =  sht.Name
+i = i+1
+Next
+
+#Do while 
+Dim i as integer
+i=1
+Do while cells(i,1).value <> ""
+cells(i,2).value = cells (i,1) + 50
+i=i+1
+Loop
+
+#Do Until while
+Dim a as integer
+a=1
+Do Until a>5
+cells(a,1)=a
+a=a+1
+Loop
+
+#Don't show the Error
+On Error Resume Next
+
+On Error GoTo lbl:
+{
+enter the code
+}
+lbl:
+   msgbox ("Error Occurred")
+
+#if,elseif,else
+if (condition) then (code)
+ elseif (condition) then (code)
+else (code)
+ endif 
+endif
+
+#select case
+example:
+dim v
+v=range("b3").value
+
+select case v
+     case 1:Range("c").value="Jan"
+     case 2:Range("c").value="Feb"
+     case 3:Range("c").value="Mar"
+     case 4:Range("c").value="Apr"
+     case 5:Range("c").value="May"
+     case 6:Range("c").value="Jun"
+     Etc....
+     case else: Range("c3").value="Invalid"
+End select
+
+#uppercase and lowercase
+Ucase
+Lcase
+
+example:
+
+Dim x as integer
+for x=3 to 9
+cell(x,3).value=Ucase(cells(x,2).value)
+cell(x,4).value=Lcase(cells(x,3).value)
+
+#left and Right
+
+example:
+Dim x as integer
+for x=3 to 9
+cell(x,5).value=Left(cells(x,2).value,3)
+cell(x,6).value=Right(cells(x,2).value,3)
+
+#CDate
+CDate(Expression) as Date
+
+#Date and Time
+#Events
+#Userform 
+(Go Through on Youtube video channel name:ProgrammingKnowledge
+)
+
+
+

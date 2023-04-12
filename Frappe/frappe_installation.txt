@@ -1,0 +1,69 @@
+1.	Frappe- v13 supports python3.6+
+
+		ubuntu 20.04 - python 3.8
+
+	Frappe- v14 supports only on python3.10+
+
+		ubuntu 22.04 - python 3.10
+
+
+Python 3.10+ (v14)
+Node.js 16
+Redis 6                                       (caching and realtime updates)
+MariaDB 10.6.6+ / Postgres v12 to v14         (Database backend)
+yarn 1.12+                                    (js dependency manager)
+pip 20+                                       (py dependency manager)
+wkhtmltopdf (version 0.12.5 with patched qt)  (for pdf generation)
+cron                                          (bench's scheduled jobs: automated certificate renewal, scheduled backups)
+NGINX                                         (proxying multitenant sites in production)
+MacOS 
+
+
+
+sudo timedatectl set-timezone "Asia/Kolkata"
+
+sudo apt-get update -y
+
+sudo apt-get install -y python3-dev python3.10-venv
+
+sudo apt-get -y install python3-setuptools python3-pip virtualenv
+
+sudo apt install -y mariadb-server
+
+
+
+"[mysqld]
+character-set-client-handshake = FALSE
+character-set-server = utf8mb4
+collation-server = utf8mb4_unicode_ci
+[mysql]
+default-character-set = utf8mb4"
+
+
+/etc/mysql/my.cnf
+
+mysql_secure_installation
+
+sudo apt-get install -y redis-server curl
+
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+
+sudo apt-get install -y nodejs
+
+sudo npm install -g yarn
+
+sudo apt-get install -y xvfb libfontconfig wkhtmltopdf
+
+sudo -H pip3 install frappe-bench
+
+sudo service mysql restart
+
+bench init frappe-framework --frappe-branch version-14
+
+cd frappe-framework/
+
+bench new-site test.com
+
+bench use test.com
+
+bench start

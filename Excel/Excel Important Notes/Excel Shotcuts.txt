@@ -1,0 +1,6 @@
+1.Alt+= ->To sum entire column
+2.Alt+HFIS ->serial number type just second (ensure mention start point don't start with empty cell)
+3.Ctrl+G ->Go to Special
+4.Ctrl+Alt+V ->Special Paste
+5.Alt+; ->copy the selected cells only
+6.Ctrl +E ->follow the same format

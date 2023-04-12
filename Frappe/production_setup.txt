@@ -1,0 +1,38 @@
+step1: 
+$ export LC_ALL=C.UTF-8
+ export LANG=C.UTF-8
+
+step2:
+bench --site madhan.com enable-scheduler
+
+step3:
+bench setup nginx
+bench setup supervisor
+
+step4:
+bench --site madhan.com set-maintenance-mode off
+
+step5:
+sudo bench setup production {username}
+optional
+sudo bench setup production madhankumarv --yes
+
+step6:
+bench stop
+and
+bench start
+
+step6:
+
+finally:
+sudo supervisorctl status
+
+should be run all supervisor services.
+
+
+
+When you are facing any errors while setup production mode.
+$ sudo -A systemctl restart supervisor
+$sudo chmod -R o+rx /home/
+
+

@@ -1,0 +1,43 @@
+file transfer:
+
+scp  sites/test.com/private/backups/20230318_105302-test_com-database.sql.gz naveenkumar@192.168.151.137:/home/naveenkumar/
+
+Remove app in bench:
+bench remove-app translator
+
+Uninstall app in site:
+bench --site test.com uninstall-app translator
+
+Overall backup:
+
+bench backup
+
+More:https://frappeframework.com/docs/v14/user/en/bench/reference/backup
+
+bench restore:
+
+bench restore [OPTIONS] SQL_FILE_PATH
+
+More:https://frappeframework.com/docs/v14/user/en/bench/reference/restore
+
+
+change the port:
+
+bench --site amrita.com serve --port 8090
+
+Error:
+
+showing updating error:
+
+Solution:
+
+bench set-config maintenance_mode 0
+
+
+
+Note:
+
+tar -xvf filename or filepath
+
+bench --site madhan.com set-admin-password Test.com@2022
+
