@@ -3,3 +3,12 @@
 3.datedif
 4.date
 5.iferror
+
+Ex1:Datedif
+=DATEDIF(Start_date,End_date,"Y")
+
+Ex2:Datedif
+=DATEDIF(Start_date,End_date,"M")
+
+Ex3:Datedif
+=DATEDIF(Start_date,End_date,"D")
