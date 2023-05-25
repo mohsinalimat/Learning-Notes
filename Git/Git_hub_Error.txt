@@ -1,0 +1,12 @@
+Git Hub error:
+
+Error:
+
+! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/madhankumar12v/G-spreadsheet.git'
+
+Solution:
+
+git pull --rebase origin main
+git push origin main
+
